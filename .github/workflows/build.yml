@@ -20,7 +20,7 @@ jobs:
       - name: Install packaging tools
         run: |
           sudo apt-get update
-          sudo apt-get install -y dpkg-dev
+          sudo apt-get install -y dpkg-dev apt-utils
 
       - name: Build Debian package
         run: |
@@ -35,7 +35,7 @@ jobs:
           mkdir -p apt-repo/dists/stable/main/binary-all
 
           cp highstakes_1.0.0_all.deb \
-            apt-repo/pool/main/h/highstakes/
+            apt-repo/pool/main/h/highstakes/highstakes_1.0.0_all.deb
 
           cd apt-repo
 
@@ -44,18 +44,12 @@ jobs:
             /dev/null \
             > dists/stable/main/binary-all/Packages
 
-          gzip -kf \
+          gzip -9 -kf \
             dists/stable/main/binary-all/Packages
 
-          cat > dists/stable/Release <<EOF
-          Origin: High Stakes
-          Label: High Stakes
-          Suite: stable
-          Codename: stable
-          Architectures: all
-          Components: main
-          Description: High Stakes Blackjack APT Repository
-          EOF
+          cd ..
+
+          apt-ftparchive release apt-repo/dists/stable > apt-repo/dists/stable/Release
 
       - name: Publish APT repository
         uses: peaceiris/actions-gh-pages@v4
