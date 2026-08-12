@@ -1,0 +1,56 @@
+name: Build High Stakes
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build Debian package
+        run: |
+          chmod 755 package/usr/bin/blackjack
+          dpkg-deb --build package highstakes_1.0.0_all.deb
+
+      - name: Prepare APT repository
+        run: |
+          mkdir -p apt-repo/pool/main/h/highstakes
+          mkdir -p apt-repo/dists/stable/main/binary-all
+
+          cp highstakes_1.0.0_all.deb \
+            apt-repo/pool/main/h/highstakes/
+
+          dpkg-scanpackages \
+            apt-repo/pool \
+            /dev/null \
+            > apt-repo/dists/stable/main/binary-all/Packages
+
+          gzip -kf \
+            apt-repo/dists/stable/main/binary-all/Packages
+
+          cat > apt-repo/dists/stable/Release <<EOF
+          Origin: High Stakes
+          Label: High Stakes
+          Suite: stable
+          Codename: stable
+          Architectures: all
+          Components: main
+          Description: High Stakes Blackjack APT Repository
+          EOF
+
+      - name: Publish APT repository
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./apt-repo
