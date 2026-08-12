@@ -14,31 +14,40 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Install packaging tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y dpkg-dev
 
       - name: Build Debian package
         run: |
           chmod 755 package/usr/bin/blackjack
           dpkg-deb --build package highstakes_1.0.0_all.deb
 
-      - name: Prepare APT repository
+      - name: Create APT repository
         run: |
+          rm -rf apt-repo
+
           mkdir -p apt-repo/pool/main/h/highstakes
           mkdir -p apt-repo/dists/stable/main/binary-all
 
           cp highstakes_1.0.0_all.deb \
             apt-repo/pool/main/h/highstakes/
 
+          cd apt-repo
+
           dpkg-scanpackages \
-            apt-repo/pool \
+            pool \
             /dev/null \
-            > apt-repo/dists/stable/main/binary-all/Packages
+            > dists/stable/main/binary-all/Packages
 
           gzip -kf \
-            apt-repo/dists/stable/main/binary-all/Packages
+            dists/stable/main/binary-all/Packages
 
-          cat > apt-repo/dists/stable/Release <<EOF
+          cat > dists/stable/Release <<EOF
           Origin: High Stakes
           Label: High Stakes
           Suite: stable
@@ -54,3 +63,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           publish_dir: ./apt-repo
+          force_orphan: false
