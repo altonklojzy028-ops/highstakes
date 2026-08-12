@@ -1,0 +1,16 @@
+Package: highstakes
+Version: 1.0.0
+Architecture: all
+Maintainer: Alton <altonklojzy028-ops@users.noreply.github.com>
+Depends: python3
+Filename: apt-repo/pool/main/h/highstakes/highstakes_1.0.0_all.deb
+Size: 6140
+MD5sum: 9659a6dd1e6f3da50eb18a81d6944525
+SHA1: ec698e42fb4a073d4bc4ac53d2538203d59b957c
+SHA256: ed6fd213d0604ccad428192756be588df68be825175c133c84fa4bf2ec792c69
+Section: games
+Priority: optional
+Description: High Stakes Blackjack
+ A terminal blackjack game with betting, card swapping,
+ high scores, and a card shop.
+
