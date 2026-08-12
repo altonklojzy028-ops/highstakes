@@ -1,17 +1,24 @@
-Date: Wed, 12 Aug 2026 15:51:39 +0000
+Origin: High Stakes
+Label: High Stakes
+Suite: stable
+Codename: stable
+Date: Wed, 12 Aug 2026 15:55:07 +0000
+Architectures: all
+Components: main
+Description: High Stakes Blackjack APT Repository
 MD5Sum:
- ad7e7b183e32fea5dddc022cc7bac378               38 Release
- 7e452a4c03cb36a21a9a39a7bea10867              521 main/binary-all/Packages
- d00c28df364530a2f6292b445138a70f              397 main/binary-all/Packages.gz
+ a4458c276c34ea908d5ddc47a5570465              194 Release
+ e1841f4990959a4fd9a2f749c97b52df              530 main/binary-all/Packages
+ ff87988a62fed065bff55ce95e3db5aa              402 main/binary-all/Packages.gz
 SHA1:
- e8f2fc88bf4dcc00588a184aebf29e4c4b36a30f               38 Release
- 169c0c2cd261302974fb04734e39427606da0532              521 main/binary-all/Packages
- 996da976830faa949f0ec8782c892c5e5d69b36b              397 main/binary-all/Packages.gz
+ 185623a43bc382f05866f32576eca30bd4fbc726              194 Release
+ 65cfada997e5060c95b22aaced2eeb19b44002cd              530 main/binary-all/Packages
+ 5112ff2fc3bda672bdccca3db00e3cdcb07e1f3b              402 main/binary-all/Packages.gz
 SHA256:
- cd8edff7c2861228bd486eb2fb499d513dbf5cb8447ebae25521729ff3875938               38 Release
- 7e145b63bef5fccffdcd209e9d754a977eab15bac6d6af1c3b4ed084c53c7043              521 main/binary-all/Packages
- ba2c162490d57a761982c2c56bec5a00f2eccb1f90fd6d4f18a92ed4139e45b6              397 main/binary-all/Packages.gz
+ edfb9e5f1884eb9d79735068e8238517bcf4f986381c93ebd73612bea80c0456              194 Release
+ 291cfac18cc991be558a34d1710345c6d0934b43f42a8b0748001bb57573e964              530 main/binary-all/Packages
+ 96041d52c3bc3ad9760a2d135a5edd675a86fb6e350fd2ef3550b7b79506a868              402 main/binary-all/Packages.gz
 SHA512:
- d09b1c3db383656344ef53bec75d3b9f2b21cfbc8940452843853103abe51eabc28c1fa799c7c1903bef8400376d63b44c949e774044a747bee6db6cec9a021f               38 Release
- b7a83fceee710cc0e8b5f2877f89ebd89b578a2432dc8d9348a75064fc5f53d5f2453bff2b29a2ccfb11cd38cc2a3fd7b622730ad5cede68d56a8f47d080ae06              521 main/binary-all/Packages
- 1e0bd0a5329fd311cba99eace7101ba02e35afc8fbe3b99be9238eaf412f54b4bcf010fd412ab0a92ed25e1f9730b7748fe81dd59a4bb9798eb1d9d690ea9a88              397 main/binary-all/Packages.gz
+ 64d4ca98c8e75e33e6ba451a84bbf90d1465d151aab42723f862e1ec60e3cb5b9a36156f6e81952cdc9f375238a0f082e8bd3d32b8a20a03064abb2b8705d5bd              194 Release
+ bb350ff8a724cd968822afbc2dc4e0e725fc8db4748fc9f79ca7b4aff062b360a25d20f10d1f704ec5ca54cb5a2acee48902a2a2fb979b115c5bfffc017c88d4              530 main/binary-all/Packages
+ cd140f029946e5b0473d05a18eed95dcff8591107f404a2c660b8fe1624a5ddf2ff6915d2596467844ae581abb7b0c5ae5804f489c76bdf970ea64b8e68921c2              402 main/binary-all/Packages.gz
