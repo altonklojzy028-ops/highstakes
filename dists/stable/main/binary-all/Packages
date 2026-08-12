@@ -3,11 +3,11 @@ Version: 1.0.0
 Architecture: all
 Maintainer: Alton <altonklojzy028-ops@users.noreply.github.com>
 Depends: python3
-Filename: apt-repo/pool/main/h/highstakes/highstakes_1.0.0_all.deb
-Size: 6136
-MD5sum: d48ac68486e6d8f3acdbfc5adba4744f
-SHA1: dd57d5c67b177623266e4cee76ad7255e90217f6
-SHA256: 999c8f37c76796b67f995c25ea9d5df6f1369093d8259b71962f939ab3674e68
+Filename: pool/main/h/highstakes/highstakes_1.0.0_all.deb
+Size: 6140
+MD5sum: f4d490cad8c8e431ef5262ac70d32288
+SHA1: e9c87e72ff1abc48a915faa12e07eea3a85dd70b
+SHA256: 70dd55212f9fe6dffb4b254bfdc26d4a96223d55d75cda53da3b62489c5833ba
 Section: games
 Priority: optional
 Description: High Stakes Blackjack
